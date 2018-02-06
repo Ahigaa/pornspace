@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hall of Straight</title>
+    <script src="/res/js/jquery.min.js"></script>
+    <script>
+        
+    </script>
+    <style>
+        @font-face {
+            src: url("pfw.ttf");
+            font-family: "PFW";
+        }
+
+        body {
+            min-height: 100%;
+            color: #FFF;
+            background-color: #000;
+            background-image: url("innerbg.png");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: "PFW";
+        }
+
+        h2 {
+            margin-top: 0em;
+            margin-bottom: 0.2em;
+            font-size: 2em;
+        }
+
+        /* banlist */
+
+        #disclaimer {
+            display: block;
+            font-size: 1em;
+            font-style: italic;
+            color: #F55;
+        }
+
+        #content {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: block;
+            width: 50%;
+            position: relative;
+            left: calc(25% - 1em);
+            top: 5em;
+            padding: 1em;
+            border-radius: 6px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        @media screen and (max-width: 1000px) {
+            #content {
+                width: calc(100% - 3em);
+                left: calc(0.5em);
+            }
+        }
+
+        .ban {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+            padding: 0.5em;
+            border-radius: 4px;
+            margin-bottom: 0.5em;
+        }
+
+        .ban.expired {
+            opacity: 0.5;
+        }
+        .ban.expired::after {
+            content: "This ban has expired. It will remain on this list until the user rejoins.";
+            display: block;
+            margin-top: 0.5em;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .ban h4 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .ban p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        .ban table {
+            width: 100%;
+            border-top: 1px solid #FFF;
+            margin-top: 0.5em;
+            margin-bottom: -0.5em;
+        }
+
+        .ban.expired table {
+            display: none;
+        }
+
+        .ban table td {
+            width: 1%;
+            font-size: 1em;
+        }
+
+        .negative {
+            color: #F55;
+        }
+
+        .positive {
+            color: #5F5;
+        }
+
+        .accent {
+            text-shadow: 0px 0px 3px #FFF;
+        }
+
+        /* padder */
+
+        #padder {
+            display: block;
+            position: relative;
+            top: 5em;
+            height: 5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h2>Hall of Straight</h2>
+        <p id="disclaimer">This is provided for gay reasons only. It is generally extremely easy to get banned, you can say whatever you want as long as you cause direct damage to the Systemspace community. Staff will usually warn/kick before taking any further action.</p>
+        <div class="ban"><h4>Nam dude</h4><p>Try to get access to Poing's steam. NiCe Ip SkRiPtKidDy: 123.21.114.176</p><table><tr><td class="expiry"><span class="negative">Does not expire</span></td><td class="appealable"><span class="negative">Cannot be appealed through normal means</span></td></tr></table></div>Debug: 1    </div>
+    <div id="padder"></div>
+</body>
+</html>
