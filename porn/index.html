@@ -2,26 +2,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="apple-touch-icon" sizes="180x180" href="/res/img/icons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="/res/img/icons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/res/img/icons/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/res/manifest.json">
-	<link rel="mask-icon" href="/res/img/icons/safari-pinned-tab.svg" color="#000000">
-	<link rel="shortcut icon" href="/res/img/icons/favicon.ico">
-	<meta name="msapplication-config" content="/res/browserconfig.xml">
+	<link rel="apple-touch-icon" sizes="180x180" href="../res/img/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../res/img/icons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../res/img/icons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="../res/manifest.json">
+	<link rel="mask-icon" href="../res/img/icons/safari-pinned-tab.svg" color="#000000">
+	<link rel="shortcut icon" href="../res/img/icons/favicon.ico">
+	<meta name="msapplication-config" content="../res/browserconfig.xml">
 	<meta name="theme-color" content="#000000">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/res/css/index.css">
-	<script src="/res/js/jquery.min.js"></script>
-	<script src="/res/js/howler.min.js"></script>
+	<script src="../res/js/jquery.min.js"></script>
+	<script src="../res/js/howler.min.js"></script>
 	<title>DATAVERSES</title>
 	<style>
 		#index {
-			background-image: url(/res/img/bg/dataverses.png);
+			background-image: url(../res/img/bg/dataverses.png);
 		}
 	</style>
-    <link rel="stylesheet" type="text/css" href="/res/css/synapsian.css">
-    <script src="/res/js/synapsian.js"></script>
+    <link rel="stylesheet" type="text/css" href="../res/css/synapsian.css">
+    <script src="../res/js/synapsian.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) { 
             var music = new Howl({
@@ -579,8 +579,8 @@
 </head>
 <body>
 	<div id="contentloader">
-		<img id="loadtsuki" src="/res/img/loader/loadtsuki.png"/>
-		<img id="loadspin" src="/res/img/loader/loadspin.png"/>
+		<img id="loadtsuki" src="../res/img/loader/loadtsuki.png"/>
+		<img id="loadspin" src="../res/img/loader/loadspin.png"/>
 	</div>
 	<style>
 		#contentloader {
@@ -636,7 +636,7 @@
 	<script>
 		window.addEventListener("load", function(event) {
 			document.getElementById("contentloader").className = "destroyedloader";
-			document.getElementById("loadspin").src = "/res/img/loader/loadfinish.png";
+			document.getElementById("loadspin").src = "../res/img/loader/loadfinish.png";
 		});
 		window.onbeforeunload = function() {
 			document.getElementById("contentloader").classList.remove("destroyedloader");
