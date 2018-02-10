@@ -34,6 +34,15 @@ html {
 	background-attachment: fixed;
 }
 
+imgrow {
+  white-space: nowrap;
+}
+
+ul, li {
+  list-style: none;
+  display: inline;
+}
+
 a {
 	cursor: url(../img/ui/pointer.png), default;
 	color: inherit;
