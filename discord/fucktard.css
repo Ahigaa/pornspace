@@ -87,3 +87,9 @@ input.normal, button.normal, select.normal, textarea.normal {
 	animation-iteration-count: infinite;
 	animation-timing-function: steps(4);
 }
+
+<style>
+h1 {
+    text-align:center
+}
+</style>
