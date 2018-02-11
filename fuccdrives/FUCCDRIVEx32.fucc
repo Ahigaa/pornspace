@@ -1,0 +1,4 @@
+using (var fileStream = new FileStream(@"../fuccdrives/", FileMode.Open))
+{
+    FUCCDRIVE.initiate();
+}
