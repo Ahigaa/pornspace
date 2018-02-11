@@ -2,6 +2,96 @@
 	<head>
 	<style>
 		cursor: pointer;
+		
+		@font-face {
+            	font-family: CNT;
+            	src: url(http://pornspace.netlify.com/res/font/countdown.ttf);
+        	}
+		
+		#counter {
+            	font-family: CNT;
+            	position: fixed;
+            	text-align: center;
+           	top: 35vh;
+            	width: 100vw;
+            	font-size: 5vw;
+            	color: rgba(255, 0, 0, 0.7);
+           	text-shadow: 0px 1vh rgba(255, 0, 0, 0.4), 0px 1vh 5vh rgba(255, 0, 0, 0.4);
+            	animation: Tilt 0.24s ease-in-out infinite alternate;
+        	}
+		
+		@keyframes Tilt {
+            	0% {
+                transform: rotate(-30deg);
+            	}
+            	100% {
+                transform: rotate(30deg) scaleY(3);
+            }
+        }
+
+        @keyframes Wow {
+        	0% {
+        		background-color: #000;
+        	}
+        	50% {
+        		background-color: #000;
+        	}
+        	100% {
+        		background-color: #111;
+        	}
+        }
+
+        #fuckoff {
+            font-family: CNT;
+            position: fixed;
+            text-align: center;
+            bottom: 0em;
+            width: 100vw;
+            left: -20vw;
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.4);
+            transform: scaleY(2);
+            animation: BoingBoing 0.48s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes BoingBoing {
+            0% {
+                transform: scaleY(2);
+                left: -20vw;
+                bottom: 0em;
+            }
+            10% {
+                transform: scaleY(1);
+                left: -20vw;
+                bottom: -0.1em;
+            }
+            30% {
+                transform: scaleY(3);
+                left: -5vw;
+                bottom: 2em;
+            }
+            50% {
+                transform: scaleY(4);
+                left: 0vw;
+                bottom: 2.5em;
+            }
+            70% {
+                transform: scaleY(3);
+                left: 5vw;
+                bottom: 2em;
+            }
+            90% {
+                transform: scaleY(1);
+                left: 20vw;
+                bottom: -0.1em;
+            }
+            100% {
+                transform: scaleY(2);
+                left: 20vw;
+                bottom: 0em;
+            }
+        }
 	</style>
 	<title>Dicksword</title>
 	
