@@ -42,3 +42,7 @@
     animation-iteration-count: infinite;
     animation-timing-function: steps(4);
 }
+
+video::-webkit-media-controls {
+  display:none !important;
+}
