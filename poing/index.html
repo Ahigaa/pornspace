@@ -6,7 +6,19 @@
     <script src="/res/js/jquery.min.js"></script>
     	<script src="../res/js/howler.min.js"></script>
 <script src="../res/js/synapsian.js"></script>
-   
+   <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var music = new Howl({
+                src: ['../res/noice/shakthat.mp3'],
+                loop: true,
+                volume: 0.3
+            });
+            window.addEventListener("load", function(event) {
+                music.play();
+            });
+            synapsify();
+        });
+    </script>
 
     <style>
 	    
