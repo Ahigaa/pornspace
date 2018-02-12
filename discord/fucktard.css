@@ -15,15 +15,36 @@ video#bgvid {
     background-size: cover; 
 }
 
+
+@import 'https://csshake.surge.sh/csshake.min.css';
+@import 'https://fonts.googleapis.com/css?family=Rock+Salt';
+
 html {
-	background-color: #000000;
-	color: #92ff06;
-	font-family: "Paragraph";
-	font-size: 16px;
-	cursor: url(https://pornspace.netlify.com/res/img/ui/cursor.png), default;
-	min-width: 100%;
-	min-height: 100%;
-	background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #92ff06;
+  font-family: "Paragraph";
+  font-size: 16px;
+  cursor: url(https://pornspace.netlify.com/res/img/ui/cursor.png), default;
+  min-width: 100%;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  margin: 20% auto;
+  left: 0;
+  line-height: 200px;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 50%;
 }
 
 a {
@@ -86,33 +107,4 @@ input.normal, button.normal, select.normal, textarea.normal {
 	animation-duration: 0.8s;
 	animation-iteration-count: infinite;
 	animation-timing-function: steps(4);
-}
-
-h1 {
-    left: 0;
-    line-height: 200px;
-    margin: auto;
-    margin-top: -100px;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-}
-
-.bounce {
-  position:fixed;
-  left:50%;
-  bottom:0;
-  margin-top:-25px;
-  margin-left:-25px;
-  height:50px;
-  width:50px;
-  background:red;
-  -webkit-animation:bounce 1s infinite;
-}
-
-@-webkit-keyframes bounce {
-  0%       { bottom:5px; }
-  25%, 75% { bottom:15px; }
-  50%      { bottom:20px; }
-  100%     {bottom:0;}
 }
