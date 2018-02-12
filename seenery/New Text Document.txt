@@ -1,0 +1,9 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>SEENMAN69'S ASSBANTER</title>
+<link rel="stylesheet" type="text/css" href="/discord/fucktard.css">
+    <script src="/res/js/jquery.min.js"></script>
+    	<script src="../res/js/howler.min.js"></script>
+<script src="../res/js/synapsian.js"></script>
+   <script>
