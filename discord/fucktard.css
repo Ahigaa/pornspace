@@ -19,11 +19,7 @@ video#bgvid {
 @import 'https://csshake.surge.sh/csshake.min.css';
 @import 'https://fonts.googleapis.com/css?family=Rock+Salt';
 
-@font-face {
-	font-family: CNT;
-	src: url("http://pornspace.netlify.com/res/font/countdown.ttf");
-}
-
+@font-face { font-family: CNT; src: url('http://pornspace.netlify.com/res/font/countdown.ttf'); } 
 
 html {
   width: 100%;
