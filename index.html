@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://systemspace.network/ -->
+<html><head>
+	<link rel="apple-touch-icon" sizes="180x180" href="../res/icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="../res/icons/32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href=../res/icons/16x16.png" sizes="16x16">
+	<link rel="manifest" href="../res/manifest.json">
+	<link rel="mask-icon" href="../res/icons/16x16.png" color="#000000">
+	<link rel="shortcut icon" href="../res/icons/favicon.ico">
+	<meta name="msapplication-config" content="/res/browserconfig.xml">
+	<meta name="theme-color" content="#000000">
+	
+	<link rel="stylesheet" type="text/css" href="https://39hige1.github.io/pornspace/res/css/index.css">
+	<script src="https://systemspace.network/res/js/jquery.min.js"></script>
+	<script src="https://systemspace.network/res/js/howler.min.js"></script>
+	<title>TSUCCI</title>
+	<script src="https://systemspace.network/res/js/cookies.js"></script>	
+	<script>		
+		document.addEventListener("DOMContentLoaded", function(event) { 
+			var noise = new Howl({
+				src: "https://systemspace.network/res/audio/ambience/7.ogg",
+				loop: true,
+				volume: 0.8			});
+			var bgm = new Howl({
+				src: "https://systemspace.network/res/audio/bgm/superbgm.ogg",
+				volume: 0.5,
+				loop: true
+			});
+			var intro = new Howl({
+				src: "../res/noice/nice_song.mp3",
+				volume: 0.5,
+				loop: true
+			});
+			if (getCookie("seenintro") !== "yes3") {
+				intro.play();
+				intro.once('load', function(){
+					PlayText();
+					$("#intro").addClass("ready");
+					setTimeout(function(){ window.scrollTo(0, 0); }, 1700);
+				    setTimeout(function(){ noise.play(); }, 1700);
+					setTimeout(function(){ $("#intro").addClass("destroyed"); }, 1700);
+				    setTimeout(function(){ bgm.play(); }, 2230);
+				    setTimeout(function(){ setCookie("seenintro", "yes3", 356); }, 1700);
+				});
+				$("#intro h6").click(function(){
+					$("#intro").hide();
+					setCookie("seenintro", "yes3", 356);
+				});
+				} else {
+						$("#intro").hide();
+						noise.play();
+						bgm.play();
+					}
+			$("#replay").click(function(){
+				setCookie("seenintro", "no", 356);
+				location.reload();
+			});
+			$("#zone").click(function() {
+				$("#flyer").css("height", "200vh");
+				$("#wallpaper #zone").css("top", "calc(70vh - 456px + 200vh)");
+				$("#wallpaper #zone").css("transition", "top 5s");
+				$("#wallpaper h1").css("top", "calc(70vh - 380px + 200vh)");
+				$("#wallpaper h1").css("transition", "top 5s");
+				$("#header").hide(2000);
+				$("#flyer").css("opacity", "0");
+				$("html").css("overflow", "hidden");
+				bgm.fade(0.2, 0, 8000);
+				noise.fade(0.5, 0, 8000);
+				setTimeout(function(){ window.location = "nothing.php"; }, 10000);
+			});
+			
+			
+			
+			GetRegistrants();
+			UpdateClock();
+			setInterval(function(){
+				GetRegistrants();
+			}, 60000);
+			setInterval(function(){
+				UpdateClock();
+			}, 1000);
+		});
+		var new_time = 0;
+     	var rec = false;
+		function GetRegistrants() {
+			var now = new Date().getTime();
+			var slot_cost = 1728;
+			
+			var registrants = 5011;
+			var original_time = 1498921200;
+			var slots_left = 31000 - registrants;
+			new_time = original_time + slot_cost * slots_left;
+         	rec = true;
+			
+			var ex_time_used = now - (original_time * 1000);
+			var ex_slots_used = Math.ceil(ex_time_used / 1000 / slot_cost);
+			var slotsss_left = 31000 - registrants - ex_slots_used;
+			$("#slotsremaining").text(slotsss_left);
+		}
+		function UpdateClock() {
+			var now = new Date().getTime();
+			var countDownDate = new Date(new_time * 1000).getTime();
+			// Find the distance between now an the count down date
+			var distance = countDownDate - now;
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			if (minutes < 10) {
+				minutes = "0" + minutes;
+			}
+			if (seconds < 10) {
+				seconds = "0" + seconds;
+			}
+			// Display the result in the element with id="demo"
+			if (distance >= 0 && rec) {
+				$("#countdown").text(days + "d " + hours + ":" + minutes + ":" + seconds);
+			} else {
+          		$("#countdown").text("Waiting...");
+            }
+        
+		}
+		/*function PlayText() {
+			setTimeout(function(){ $("#intro h1").html("GAT_") }, 100);
+			setTimeout(function(){ $("#intro h1").html("GATES\\") }, 180);
+			setTimeout(function(){ $("#intro h1").html("GATES OP|") }, 270);
+			setTimeout(function(){ $("#intro h1").html("GATES OPEN/") }, 350);
+			setTimeout(function(){ $("#intro h1").html("GATES OPEN-") }, 450);
+			setTimeout(function(){ $("#intro h1").html("GATES OPEN\\") }, 510);
+			setTimeout(function(){ $("#intro h1").html("GATES OPEN|") }, 620);
+			setTimeout(function(){ $("#intro h1").html("GATES OPEN/") }, 690);
+			setTimeout(function(){ $("#intro h1").html("GATES OPEN-") }, 740);
+			setTimeout(function(){ $("#intro h1").html("GATES O\\") }, 800);
+			setTimeout(function(){ $("#intro h1").html("GAT|") }, 880);
+			setTimeout(function(){ $("#intro h1").html("/") }, 940);
+			setTimeout(function(){ $("#intro h1").html("-") }, 1040);
+			setTimeout(function(){ $("#intro h1").html("\\") }, 1120);
+			setTimeout(function(){ $("#intro h1").html("Unli|") }, 1240);
+			setTimeout(function(){ $("#intro h1").html("Unlink t/") }, 1290);
+			setTimeout(function(){ $("#intro h1").html("Unlink the wor-") }, 1340);
+			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Un\\") }, 1440);
+			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock th|") }, 1480);
+			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock the rest./") }, 1520);
+			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock the rest.") }, 1580);
+		}*/
+
+		var konami = "38,38,40,40,37,39,37,39,66,65";
+		var kkeys = [];
+
+		$(document).keydown(function(e) {
+			kkeys.push(e.keyCode);
+
+			if (kkeys.toString().indexOf(konami) >= 0) {
+				$(document).unbind('keydown', arguments.callee);
+
+				window.location.href = "/fullindex.php";
+			}
+		});
+	</script>
+	<style>
+		@font-face {
+			font-family: CNT;
+			src: url(https://39hige1.github.io/pornspace/res/font/countdown.ttf);
+		}
+		#countdown {
+			font-family: CNT;
+			font-size: 3em;
+			margin: 0;
+			text-shadow: 0px 0px 16px #FF0;
+		}
+		#count h3 {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+		}
+		#slots h4 {
+			font-size: 24px;
+			margin: 0;
+			margin-top: 0.5em;
+		}
+		#slots h3 {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+			margin-bottom: 1em;
+		}
+		#belief h4 {
+			font-size: 24px;
+			margin: 0;
+			margin-top: 0.5em;
+		}
+		#belief h3 {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+			margin-bottom: 1em;
+		}
+		#flyer {
+			width: 100%;
+			height: 0px;
+			background-color: #000;
+			background-image: url(https://image.ibb.co/eONpFc/home.jpg);
+			background-attachment: fixed;
+			background-position: center;
+			transition: height 5s, opacity 5s;
+		}
+		#wallpaper {
+			width: 100%;
+			height: 70vh;
+			background-color: #000;
+			background-image: url(https://image.ibb.co/eONpFc/home.jpg);
+			background-attachment: fixed;
+			background-position: center;
+		}
+		#wallpaper #zone {
+			position: absolute;
+			top: calc(70vh - 450px);
+			left: 10vw;
+			transition: top 0s;
+                        
+		}
+		#wallpaper h1 {
+			position: absolute;
+			left: calc(10vw + 450px);
+			top: calc(70vh - 380px);
+			font-family: Heading;
+			font-size: 3vw;
+			text-shadow: 3px 6px #000, 0px -1px #000, 0px 1px #000, -1px 0px #000, 1px 0px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000, 1px -1px #000;
+			transition: top 0s;
+		}
+		#register-button {
+			color: #FFFF00;
+		}
+		#register-button:hover {
+			color: #FF0000;
+			text-shadow: 0px 0px 10px #FF0000;
+		}
+		#intro {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1000000;
+			background-color: #000;
+		}
+		#intro.ready {
+			animation: 1.7s introHeat cubic-bezier(.82,.28,.93,.3) forwards;
+		}
+		#intro h1 {
+			position: fixed;
+			left: calc(10vw + 450px);
+			top: calc(70vh - 380px);
+			font-family: Heading;
+			font-size: 3vw;
+			text-shadow: 3px 6px #000, 0px -1px #000, 0px 1px #000, -1px 0px #000, 1px 0px #000, -1px -1px #000, 1px 1px #000, -1px 1px #000, 1px -1px #000;
+		}
+		#intro.ready h1 {
+			animation: 1.7s typeHeat cubic-bezier(.82,.28,.93,.3) forwards;
+		}
+		#intro h6 {
+			position: relative;
+			top: 90vh;
+			cursor: pointer;
+			margin: 0;
+			color: #FFF;
+			opacity: 0.2;
+		}
+		#intro.destroyed {
+			transition: 2s;
+			opacity: 0;
+			pointer-events: none;
+		}
+		@keyframes introHeat {
+			0% {
+				background-color: #000;
+			}
+			100% {
+				background-color: #888;
+			}
+		}
+		@keyframes typeHeat {
+			0% {
+				text-shadow: 0px 0px 0px #FFF;
+				color: #FFF;
+			}
+			100% {
+				text-shadow: 0px 0px 100px #FFF, 0px 0px 20px #FFF, 0px 0px 10px #FFF;
+				color: #AAA;
+			}
+		}
+		#back {
+			background-color: rgba(0,0,0,1);
+			border: 1px solid #FFF;
+			box-shadow: 0px 6px #7859CC, 0px 0px 16px #7859CC;
+			width: 10em;
+			font-family: Heading;
+			font-size: 2em;
+			cursor: pointer;
+			position: absolute;
+			left: calc(19vw + 450px);
+			top: calc(90vh - 380px);
+			transition: 0.5s;
+			text-align: left;
+		}
+		#back:hover {
+			box-shadow: 0px 2px #7859CC, 0px 0px 64px #7859CC;
+			top: calc(90vh - 375px);
+		}
+	</style>
+<style type="text/css">
+:root .adsbox,
+:root #header + #content > #left > #rlblock_left
+{ display: none !important; }</style><style>@media print {#ghostery-purple-box {display:none !important}}</style></head>
+<body>
+	<div id="contentloader" class="destroyedloader">
+		<img id="loadtsuki" src="./TSUKI_files/loadtsuki.png">
+		<img id="loadspin" src="./TSUKI_files/loadfinish.png">
+	</div>
+	<style>
+		#contentloader {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #000;
+			z-index: 10000;
+			transition: 0.2s;
+		}
+		#loadtsuki {
+			position: absolute;
+			left: calc(50% - 48px);
+			top: calc(50% - 48px);
+		}
+		#loadspin {
+			position: absolute;
+			left: calc(50% - 46px);
+			top: calc(50% - 47px);
+			animation: LoaderSpin 2s infinite linear;
+		}
+		@keyframes LoaderSpin {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+		.destroyedloader {
+			opacity: 0;
+			pointer-events: none;
+			transition: 0.5s !important;
+			
+		}
+		.destroyedloader #loadtsuki {
+			top: calc(50% - 100px);
+			transition: 0.5s ease-in !important;
+		}
+		.destroyedloader #loadspin {
+			top: calc(50% - 100px);
+			transition: 0.5s ease-in !important;
+		}
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(event) { 
+			document.getElementById("contentloader").className = "destroyedloader";
+			document.getElementById("loadspin").src = "/res/img/loader/loadfinish.png";
+		});
+		window.onbeforeunload = function() {
+			document.getElementById("contentloader").classList.remove("destroyedloader");
+			document.getElementById("loadspin").src = "/res/img/loader/loadspin.png";
+		}
+	</script>
+	<div id="header">
+		<div id="headerbar">
+			<a class="statuslink" href="https://systemspace.network/status.php"><img id="headerstatus" src="./TSUKI_files/status-gay.png"></a>			<img id="headerfade_left" src="./TSUKI_files/fade-left.png">
+			<marquee truespeed="" scrolldelay="30" scrollamount="3" id="headernews">
+				<img class="newssep" src="./TSUKI_files/sep.png">
+				<p>Welcome to TSUCCI's gay, official homepage</p>
+				<img class="newssep" src="./TSUKI_files/sep.png">
+				<p style="color: red">Registrations closed</p>
+				<img class="newssep" src="./TSUKI_files/sep.png">
+				<p style="color: lime">Porn open</p>
+				<img class="newssep" src="./TSUKI_files/sep.png">
+				<p>5011 pornstars registered</p>				
+				<img class="newssep" src="./TSUKI_files/sep.png">
+				<p>Latest news: "Discord open"</p>				
+				<img class="newssep" src="./TSUKI_files/sep.png">
+				<p>Life is dead.</p>
+				<img class="newssep" src="./TSUKI_files/sep.png">
+			</marquee>
+		</div>
+		<a href="https://systemspace.network/"><img id="knob" src="./TSUKI_files/tsucci_knob.png"></a>
+		<a href="./porn/"><img id="knob4" src="./TSUKI_files/pornknob.png"></a>
+		<a href="https://diran.netlify.com/"><img id="knob5" src="./TSUKI_files/diranknob.png"/></a>
+		<a href="http://boards.hyakanghen.net/"><img id="knob3" src="./TSUKI_files/boards.png"></a>
+		<a href="../discord/"><img id="knob8" src="./TSUKI_files/discord.png"></a>
+	</div>
+	<style>
+		#header {
+			position: relative;
+			z-index: 1;
+		}
+		#headerbar {
+			position: fixed;
+			width: 100%;
+			left: 0;
+			top: 0;
+			height: 20px;
+			background-color: #000;
+			box-shadow: 0px 1px #FFF, 0px 2px #000;
+		}
+		#headerstatus {
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 1;
+		}
+		#headerfade_left {
+			position: fixed;
+			left: 150px;
+			top: 0px;
+			z-index: 1;
+		}
+		#headernews {
+			width: 100%;
+			font-family: Heading;
+			font-size: 16px;
+			letter-spacing: -4px;
+		}
+		#headernews p {
+			display: inline;
+			position: relative;
+			top: -2px;
+		}
+		#knob {
+			position: fixed;
+			left: 0;
+			top: 20px;
+		}
+		#knob2 {
+			position: fixed;
+			right: 0;
+			top: 20px;
+		}
+		#knob3 {
+			position: fixed;
+			right: 100px;
+			top: 20px;
+		}
+		#knob4 {
+			position: fixed;
+			left: 200px;
+			top: 20px;
+		}
+		#knob5 {
+			position: fixed;
+			left: 350px;
+			top: 20px;
+		}
+		#knob6 {
+			position: fixed;
+			left: 460px;
+			top: 20px;
+		}
+		#knob7 {
+			position: fixed;
+			left: 492px;
+			top: 20px;
+		}
+		#knob8 {
+			position: fixed;
+			right: 225px;
+			top: 20px;
+		}
+	</style>
+	<div id="overlay"></div>
+	<div id="overlay2"></div>
+		<div id="intro" style="display: none;"><h1></h1><center><h6>skip</h6></center></div>
+	<div id="flyer"></div>
+	<div id="wallpaper">
+		<img id="zone" src="../res/img/others/zone.png">
+		<h1>Unlink the porn.<br>Unlock the sex.</h1>
+	</div>
+	<div class="seperator"></div>
+	<div class="padded">
+		<h1>Welcome to the TSUCCI project</h1>
+		<p>This webpage officially has been made to facilitate the broadcasting of all TSUCCI fuccdrives™ and to combat the lies of Systemspace.</p>
+	</div>
+	<div class="seperate"></div>
+	<div class="padded">
+		<center>
+			<div id="stats">
+				<a href="https://youtu.be/s3IUUbMa4KQ">
+  				<img src="https://image.ibb.co/mbFri7/27750707_821308458074562_7492285068880005812_n.png">
+				</a>
+			</div>
+		</center>
+	</div>
+	<div class="seperate"></div>
+	<div class="padded">
+		<h1>ＩＮＦＩＮＩＴＥ　ＳＥＸ　塩ヱ現</h1>
+		<p> Pornspace is a re-definment of Systemspace; Promises of false better lifes and the need to mark your soul is non-existent. Pornspace is the place in that context, and it is where the soul goes upon death, fully sentient but with no memories of LIFE.
+Pornspace, as the title suggests, consists of lands of infinite sex, and it is always changing depending on whoever dies and goes there. In pornspace, you can't hide any of your secret kinks or fetishes, they all come to you and please you, it is land of immortality and infinite sex. Pornspace consists of private "islands". For each Soul, there is an "island" of sex and pleasure, which
+can only be occupied by the individual, and changed as well. There is infact, no way to deny pornspace, every soul visits it, no matter what. There is little known about Pornspace other than it's existence, this re-definement has been made for sole purposes of informing, not "converting". </p>
+<br>
+<br>
+		<font size="7" color="#f44242">click here to go to the shadow realm</font>
+		<a href="mrbones/index.html"><img src="mrbones/ahigaskullbat.gif"></a>
+	</div>
+	<div class="seperate"></div>
+	<div id="index">
+		<div class="overload">
+			<!--Removed this shit because fuck all nyuggah -->
+		</div>
+	</div>
+	<!--<center>This site is to make as much fun of Systemspace as possible by ahiga,poing and seenery.. Please visit <a class="reference" href="https://systemspace.network/copyright.php">Copyright</a> for more information. </center>-->
+        <!--https://pornspace.link/seenery/-->
+	<script src="//script.opentracker.net/?site=pornspace.link"></script>
+<script type="text/javascript" defer="defer" src="//script.opentracker.net/?site=www.pornspace.link"></script>
+	<script type="text/javascript" defer="defer" src="//script.opentracker.net/?site=pornspace.link"></script> 
+</a></body></html>
