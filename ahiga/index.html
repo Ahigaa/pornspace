@@ -4,7 +4,7 @@
     <title>Let's all love Lain</title>
 <link rel="stylesheet" type="text/css" href="https://ahigaa.github.io/pornspace/discord/fucktard.css">
     <script src="https://ahigaa.github.io/pornspace/res/js/jquery.min.js"></script>
-    	<script src="https://ahigaa.github.io/pornspace/res/js/howler.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 <script src="https://ahigaa.github.io/pornspace/res/js/synapsian.js"></script>
    <script>
 	   
@@ -25,7 +25,9 @@
             window.addEventListener("load", function(event) {
                 music.play();
             });
-            synapsify();
+            if (typeof synapsify === "function") {
+		    synapsify();
+	    }
         });
 	   
 	   
