@@ -123,6 +123,11 @@
         
 		}
 		function PlayText() {
+			console.log("PlayText started");
+			  setTimeout(function(){ 
+			    console.log("Changing to GAT_");
+			    $("#intro h1").html("GAT_");
+			  }, 100);
 			setTimeout(function(){ $("#intro h1").html("GAT_") }, 100);
 			setTimeout(function(){ $("#intro h1").html("GATES\\") }, 180);
 			setTimeout(function(){ $("#intro h1").html("GATES OP|") }, 270);
