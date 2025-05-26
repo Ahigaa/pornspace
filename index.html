@@ -145,6 +145,15 @@
 			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock the rest./") }, 1520);
 			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock the rest.") }, 1580);
 		}
+		function getCookie(name) {
+		  const cookieString = `; ${document.cookie}`;
+		  const parts = cookieString.split(`; ${name}=`);
+		  if (parts.length === 2) {
+		    return parts.pop().split(';').shift();
+		  }
+		  return null;
+		}
+
 
 		var konami = "38,38,40,40,37,39,37,39,66,65";
 		var kkeys = [];
