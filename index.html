@@ -15,7 +15,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
 	<title>TSUCCI</title>
-	<script src="https://systemspace.network/res/js/cookies.js"></script>	
+
 	<script>		
 		document.addEventListener("DOMContentLoaded", function(event) { 
 			var noise = new Howl({
@@ -145,22 +145,30 @@
 			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock the rest./") }, 1520);
 			setTimeout(function(){ $("#intro h1").html("Unlink the world.<br>Unlock the rest.") }, 1580);
 		}
-		function getCookie(name) {
-		  const cookieString = `; ${document.cookie}`;
-		  const parts = cookieString.split(`; ${name}=`);
-		  if (parts.length === 2) {
-		    return parts.pop().split(';').shift();
-		  }
-		  return null;
+		function setCookie(cname, cvalue, exdays) {
+		    var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		    var expires = "expires="+d.toUTCString();
+		    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 		}
-		function setCookie(name, value, days) {
-		    let expires = "";
-		    if (days) {
-		        const date = new Date();
-		        date.setTime(date.getTime() + (days*24*60*60*1000));
-		        expires = "; expires=" + date.toUTCString();
+		
+		function getCookie(cname) {
+		    var name = cname + "=";
+		    var ca = document.cookie.split(';');
+		    for(var i = 0; i < ca.length; i++) {
+		        var c = ca[i];
+		        while (c.charAt(0) == ' ') {
+		            c = c.substring(1);
+		        }
+		        if (c.indexOf(name) == 0) {
+		            return c.substring(name.length, c.length);
+		        }
 		    }
-		    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+		    return "";
+		}
+		
+		function deleteCookie(cname) {
+		    document.cookie = cname + "=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 		}
 
 
