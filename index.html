@@ -60,26 +60,19 @@
 				volume: 0.5,
 				loop: true
 			});
-			if (getCookie("seenintro") !== "yes3") {
-				intro.play();
-				intro.once('load', function(){
-					PlayText();
-					$("#intro").addClass("ready");
-					setTimeout(function(){ window.scrollTo(0, 0); }, 1700);
-				    setTimeout(function(){ noise.play(); }, 1700);
-					setTimeout(function(){ $("#intro").addClass("destroyed"); }, 1700);
-				    setTimeout(function(){ bgm.play(); }, 2230);
-				    setTimeout(function(){ setCookie("seenintro", "yes3", 356); }, 1700);
-				});
-				$("#intro h6").click(function(){
-					$("#intro").hide();
-					setCookie("seenintro", "yes3", 356);
-				});
-				} else {
-						$("#intro").hide();
-						noise.play();
-						bgm.play();
-					}
+intro.play();
+intro.once('load', function(){
+	PlayText();
+	$("#intro").addClass("ready");
+	setTimeout(function(){ window.scrollTo(0, 0); }, 1700);
+	setTimeout(function(){ noise.play(); }, 1700);
+	setTimeout(function(){ $("#intro").addClass("destroyed"); }, 1700);
+	setTimeout(function(){ bgm.play(); }, 2230);
+});
+$("#intro h6").click(function(){
+	$("#intro").hide();
+});
+
 			$("#replay").click(function(){
 				setCookie("seenintro", "no", 356);
 				location.reload();
